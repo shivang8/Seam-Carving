@@ -9,7 +9,7 @@ I = rgb2gray(Tower); % Greyscale Conversion
 %figure;
 %imshow(I)
 %[Gmag, Gdir] = imgradient(I,'prewitt'); % Gradient Method
-e = entropy(I);
+e = entropyfilt(I);
 %{
 figure;
 imshow(Gmag)
@@ -18,7 +18,7 @@ figure;
 imshowpair(Gmag, Gdir, 'montage');
 title('Gradient Magnitude, Gmag (left), and Gradient Direction, Gdir (right), using Prewitt method')
 %}
-imshow(e)
+imshow(e,[])
 dp = e;
 sz = size(dp);
 for i = 2:sz(1)
