@@ -1,23 +1,13 @@
 clear
 
-load('C:\Users\acer\Desktop\Image Processing\Seam-Carving\Tower.mat')
+image = imread('C:\Users\acer\Desktop\Image Processing\Seam-Carving\Tower.jpg');
 
-%imshow(Tower)
+%imshow(image)
 
-I = rgb2gray(Tower); % Greyscale Conversion
+I = rgb2gray(image); % Greyscale Conversion
 
-%figure;
-%imshow(I)
-%[Gmag, Gdir] = imgradient(I,'prewitt'); % Gradient Method
-e = entropyfilt(I);
-%{
-figure;
-imshow(Gmag)
+e = entropyfilt(I); %Entropy Conversion
 
-figure;
-imshowpair(Gmag, Gdir, 'montage');
-title('Gradient Magnitude, Gmag (left), and Gradient Direction, Gdir (right), using Prewitt method')
-%}
 imshow(e,[])
 dp = e;
 sz = size(dp);
