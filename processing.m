@@ -1,9 +1,10 @@
 function [new] = processing(dp, img)
     sz = size(img);
     sz(2) = sz(2) - 1;
-    new = zeros(sz);
+    new = zeros(sz,'uint8');
     sz = size(img);
     [~, index] = min(dp(sz(1),:));
+    disp(index);
     count = 1;
     for j = 1:sz(2)
         if j==index
@@ -44,14 +45,14 @@ function [new] = processing(dp, img)
             end
         end
         count = 1;
-        imshow(new);
+        %imshow(new);
         for j = 1:sz(2)
             if j==index
                 % PASS 
             else
-                new(i,count,1) = img(sz(1),j,1);
-                new(i,count,2) = img(sz(1),j,2);
-                new(i,count,3) = img(sz(1),j,3);
+                new(i,count,1) = img(i,j,1);
+                new(i,count,2) = img(i,j,2);
+                new(i,count,3) = img(i,j,3);
                 count = count + 1;
             end
         end

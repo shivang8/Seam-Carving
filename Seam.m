@@ -1,15 +1,17 @@
 clear
-clc
 
-image = imread('C:\Users\acer\Desktop\Image Processing\Seam-Carving\Tower.jpg');
+
+image = imread('C:\Users\acer\Desktop\Image Processing\Seam-Carving\sample.jpg');
 
 %imshow(image)
 img = image;
+for k = 1:10
+    dp = dp_generator(img);
+    img = processing(dp, img);
+end
+imshow(image);
+figure;
+imshow(img);
 
-I = rgb2gray(img); % Greyscale Conversion
-e = entropyfilt(I); % Entropy Conversion
-%imshow(e,[])
-dp = dp_generator(e);
-img = processing(dp, img);
 
 

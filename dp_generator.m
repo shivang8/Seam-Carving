@@ -1,4 +1,7 @@
-function [dp] = dp_generator(e)
+function [dp] = dp_generator(img)
+    I = rgb2gray(img); % Greyscale Conversion
+    e = entropyfilt(I); % Entropy Conversion
+    %imshow(e,[])
     dp=e;
     sz = size(dp);
     for i = 2:sz(1)
