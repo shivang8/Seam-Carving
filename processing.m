@@ -3,7 +3,8 @@ function [new] = processing(dp, img)
     sz(2) = sz(2) - 1;
     new = zeros(sz,'uint8');
     sz = size(img);
-    [~, index] = min(dp(sz(1),:));
+    arr = dp(sz(1),:);
+    [~, index] = min(arr);
     disp(index);
     count = 1;
     for j = 1:sz(2)
@@ -44,6 +45,7 @@ function [new] = processing(dp, img)
                 end
             end
         end
+        %disp(index);
         count = 1;
         %imshow(new);
         for j = 1:sz(2)
@@ -57,5 +59,4 @@ function [new] = processing(dp, img)
             end
         end
     end
-    
 end
