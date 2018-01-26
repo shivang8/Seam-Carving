@@ -5,7 +5,7 @@ function [new] = processing(dp, img)
     sz = size(img);
     arr = dp(sz(1),:);
     [~, index] = min(arr);
-    disp(index);
+    %disp(index);
     count = 1;
     for j = 1:sz(2)
         if j==index
