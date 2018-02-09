@@ -1,6 +1,7 @@
 clear
+clc
 
-image = imread('C:\Users\acer\Desktop\Image Processing\Seam-Carving\sample.jpg');
+image = imread('C:\Users\acer\Desktop\Image Processing\Seam-Carving\Images\5.jpg');
 horizontal = input('Enter Number of Horizontal Seams to remove : ');
 vertical = input('Enter Number of Vertical Seams to remove : ');
 %imshow(image)
