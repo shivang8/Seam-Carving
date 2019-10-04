@@ -1,6 +1,6 @@
 # Seam Carving
 
-## Objective: To Scale Down Image using Seam Carving Technique.  
+## Objective: To Scale Down Image using Seam Carving Technique. ##
 
 # Module wise explanation
 
